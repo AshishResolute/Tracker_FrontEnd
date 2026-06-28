@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,body{
+  height:100vh;
+  width:100vw;
+  background-color: #131313;
+  overflow-x: auto;
+}
+
+#header{
+  color:#a4a4a4;
+  padding:16px;
+  margin:8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border:1px solid whitesmoke
+}
+#jobForm{
+  border:4px solid whitesmoke;
+  display: flex;
+  flex-direction: column;
+  padding:16px;
+  margin:4px;
+  width:30%
+}
+#jobForm>*{
+  margin-top:4px;
+  margin-bottom: 4px;
+}
+#main{
+  display: flex;
+  width:100%
+}
+.jobListHeader{
+  padding:8px;
+  margin:4px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+#jobList{
+  width:70%
+}
