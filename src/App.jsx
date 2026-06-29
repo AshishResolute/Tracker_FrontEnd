@@ -8,10 +8,10 @@ export const App = () => {
   useEffect(()=>{
     const fetchJobApplications = async()=>{
       const fetchDetails =  await fetch(`http://localhost:3000/application`)
-      console.log(fetchDetails)
       const userJobApplications = await fetchDetails.json()
+      console.log(userJobApplications)
       setJobApplications((prevApplications)=>{
-        return [...prevApplications,userJobApplications.applications[0]]
+        return [...prevApplications,...userJobApplications.applications]
       })
     }
     fetchJobApplications()

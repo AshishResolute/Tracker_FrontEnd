@@ -1,47 +1,85 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-html,body{
-  height:100vh;
-  width:100vw;
+html,
+body {
+  height: 100vh;
+  width: 100vw;
   background-color: #131313;
   overflow-x: auto;
 }
 
-#header{
-  color:#a4a4a4;
-  padding:16px;
-  margin:8px;
+#header {
+  color: #a4a4a4;
+  padding: 16px;
+  margin: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border:1px solid whitesmoke
+  border: 1px solid whitesmoke;
 }
-#jobForm{
-  border:4px solid whitesmoke;
+#jobForm {
+  border: 4px solid whitesmoke;
   display: flex;
   flex-direction: column;
-  padding:16px;
-  margin:4px;
-  width:30%
+  padding: 16px;
+  margin: 4px;
+  width: 30%;
 }
-#jobForm>*{
-  margin-top:4px;
+#jobForm > * {
+  margin-top: 4px;
   margin-bottom: 4px;
 }
-#main{
+#main {
   display: flex;
-  width:100%
+  width: 100%;
 }
-.jobListHeader{
-  padding:8px;
-  margin:4px;
+.jobListHeader {
+  padding: 8px;
+  margin: 4px;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
-#jobList{
-  width:70%
+#jobList {
+  width: 70%;
+}
+.jobCard {
+  border: 5px solid white;
+  padding: 8px;
+  margin: 4px;
+}
+.jobList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-auto-rows: minmax(100px,auto); */
+  gap: 12px;
+}
+.cardDetails {
+  min-height: 150px;
+  padding: 4px;
+  margin: 2px;
+    margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.cardDetails > * {
+  margin-bottom: 4px;
+}
+
+.jobCard>.jobTitle{
+  padding:2px;
+  margin-bottom:2px;
+}
+.jobCard>.updateJobCard{
+  display: flex;
+  justify-content:space-between;
+}
+.updateJobCard>button{
+  width:50%;
+  padding:4px;
+  margin:2px;
+  border-radius: 4px;
+  border:0px;
 }
