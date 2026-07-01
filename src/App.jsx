@@ -24,7 +24,7 @@ export const App = () => {
       <Header jobApplications={jobApplications}/>
       <main id="main">
         <JobForm title={jobTitle} setJobTitle={setJobTitle} company={company} setCompany={setCompany} source={source} setSource={setSource} date={date} setDate={setDate} setJobApplications={setJobApplications}/>
-        <JobList jobApplications={jobApplications}/>
+        <JobList jobApplications={jobApplications} setJobApplications={setJobApplications}/>
       </main>
       
     </>

@@ -26,9 +26,9 @@ export const JobForm = ({
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        console.log(`Form data sent!`);
+        const newJobApplication = await response.json() // here used the repsonse recieved from backend as my frontend missed the id that is made by the backend and the data was not synced ,got stuck in delete functionality
         setJobApplications((prev) => {
-          return [...prev, formData];
+          return [...prev, newJobApplication.data];
         });
       }
     } catch (error) {
@@ -44,7 +44,6 @@ export const JobForm = ({
         id="job_title"
         value={title}
         onChange={(event) => {
-          console.log(title);
           setJobTitle(event.target.value);
         }}
       />
@@ -73,7 +72,6 @@ export const JobForm = ({
         id="applied_date"
         value={date}
         onChange={(event) => {
-          console.log(event.target.value);
           setDate(event.target.value);
         }}
       />
