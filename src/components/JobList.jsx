@@ -1,7 +1,7 @@
 import { MdModeEditOutline } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
-export const JobList = ({ jobApplications, setJobApplications }) => {
+export const JobList = ({ jobApplications, setJobApplications,toggleModal }) => {
   return (
     <div id="jobList">
       <div className="jobListHeader">
@@ -15,6 +15,7 @@ export const JobList = ({ jobApplications, setJobApplications }) => {
             key={crypto.randomUUID()}
             setJobApplications={setJobApplications}
             jobApplications={jobApplications}
+            toggleModal={toggleModal}
           />
         ))}
       </div>
@@ -22,7 +23,7 @@ export const JobList = ({ jobApplications, setJobApplications }) => {
   );
 };
 
-const JobCard = ({ data, setJobApplications, jobApplications }) => {
+const JobCard = ({ data, setJobApplications, jobApplications,toggleModal }) => {
   const deleteJobApplication = async () => {
     const response = await fetch(
       `http://localhost:3000/application/${data.id}`,
@@ -51,7 +52,7 @@ const JobCard = ({ data, setJobApplications, jobApplications }) => {
       </div>
       <h4 className="jobTitle">{data.title}</h4>
       <div className="updateJobCard">
-        <button>
+        <button onClick={toggleModal}>
           <MdModeEditOutline />
         </button>
         <button onClick={deleteJobApplication}>
